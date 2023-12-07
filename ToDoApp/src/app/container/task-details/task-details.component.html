@@ -1,0 +1,29 @@
+<div *ngIf="selectedTask" class="sidenav-container">
+  <div class="sidenav" >
+    <div class="header">
+      <h2><strong>Task :</strong></h2>
+      <span (click)="closeEditDetails()" style="cursor:pointer;">X</span>
+    </div>
+    <form method="post" [formGroup]="updateForm">
+      <div>
+        <div class="form form-group">
+          <input   class="form-control my-4" formControlName="TaskName"  (focusout)="validateField('TaskName')">
+          <span *ngIf="shouldShowError('TaskName') && updateForm.get('TaskName').hasError('required')" class="text-danger">This field is required</span>
+          <span *ngIf="shouldShowError('TaskName') && updateForm.get('TaskName').hasError('minlength')" class="text-danger">minimum length is 3 letters</span>
+          <textarea class="description form-control my-5"formControlName="Description" (focusout)="validateField('TaskName')"></textarea>
+          <span *ngIf="shouldShowError('Description') && updateForm.get('Description').hasError('minlength')" class="text-danger">minimum length is 5 letters</span>
+          <div class="d-flex align-items-center gap-4">
+            <label for="dueDate">Due Date: </label>
+            <input id="dueDate" formControlName="dueDate" class="form-control w-50" type="date" (focusout)="validateField('dueDate')">
+            <span *ngIf="shouldShowError('dueDate') && updateForm.get('dueDate').hasError('required')" class="text-danger">This field is required</span>
+          </div>
+        </div>
+        <div class="buttons d-flex  justify-content-between">
+          <input class="btn btn-outline-danger"  (click)="DeleteTask(selectedTask.id)"  type="button" value="Delete Task">
+          <input class="btn btn-primary" (click)="EditTask(selectedTask.id)" value="Save changes" type="submit">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

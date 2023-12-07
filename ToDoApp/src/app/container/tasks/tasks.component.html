@@ -1,0 +1,8 @@
+<h1 class="Htitle mb-5 font-weight-bold" >Tasks</h1>
+<div class="newTask  mb-3">
+  <div class="add-task ">
+    <button class="add-task-btn btn btn-outline-primary p-3 text-left" (click)="changeTaskAddViewStatus()" type="button"><span class="ms-2 me-4">+</span> Add new task</button>
+  </div>
+</div>
+<task-list (selectedTask)="setSelectedTask($event)" [newTask] =allTasks ></task-list>
+<new-task (AllTasks)="AllTasks($event)" (cancleTaskBtn) ="changeTaskAddViewStatus()" *ngIf="viewAddTaskbox" [viewAddTaskbox] = "viewAddTaskbox" ></new-task>

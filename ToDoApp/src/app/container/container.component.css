@@ -1,0 +1,7 @@
+.containerdiv{
+  display: flex;
+  padding: 40px;
+}
+.sideNavBtn{
+  font-size: 20px;
+}

@@ -1,0 +1,47 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+ToDoApp/dist
+ToDoApp/tmp
+ToDoApp/out-tsc
+ToDoApp/bazel-out
+
+# Node
+ToDoApp/node_modules
+ToDoApp/npm-debug.log
+ToDoApp/yarn-error.log
+
+# IDEs and editors
+ToDoApp/.idea/
+ToDoApp/.project
+ToDoApp/.classpath
+ToDoApp/.c9/
+ToDoApp/*.launch
+ToDoApp/.settings/
+ToDoApp/*.sublime-workspace
+
+# Visual Studio Code
+ToDoApp/.vscode/*
+ToDoApp/!.vscode/settings.json
+ToDoApp/!.vscode/tasks.json
+ToDoApp/!.vscode/launch.json
+ToDoApp/!.vscode/extensions.json
+ToDoApp/.history/*
+
+# Miscellaneous
+ToDoApp/.angular/cache
+ToDoApp/.sass-cache/
+ToDoApp/connect.lock
+ToDoApp/coverage
+ToDoApp/libpeerconnection.log
+ToDoApp/testem.log
+ToDoApp/typings
+
+# System files
+ToDoApp/.DS_Store
+ToDoApp/Thumbs.db
+ToDoMoDo/ToDoMoDo/Model/Task.cs
+ToDoMoDo/ToDoMoDo.sln
+
+# appsettings
+ToDoMoDo\ToDoMoDo\appsettings.json

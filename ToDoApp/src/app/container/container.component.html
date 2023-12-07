@@ -1,0 +1,6 @@
+<div class="containerdiv row ">
+  <div class="sideNavBtn col-1 mt-2" ><fa-icon [icon]="fabars" ></fa-icon></div>
+  <app-tasks [@colChange] (selectedTask2) = "setSelectedTask($event)" #tasks class="tasks  d-flex flex-column" [ngClass]="{'col-8':TaskDetails, 'col-11':!TaskDetails}"></app-tasks>
+  <task-details [viewed] ="TaskDetails" [selectedTask] = "selectedTask" [@fadeInOut]  taskBoxBool = true CustomizeGridSystem #taskDetails *ngIf="TaskDetails"  [ngClass]="{'col-3':TaskDetails }" class="col-3"></task-details>
+</div>
+

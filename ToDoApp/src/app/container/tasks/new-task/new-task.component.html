@@ -1,0 +1,20 @@
+<div [@fadeInOut2] class="container-div bg-white">
+  <form [formGroup] ="TaskformIn" action="post" class="add-task-form form-group d-flex flex-column justify-content-between">
+    <div>
+      <input type="text" id="TaskName" formControlName="TaskName" placeholder="Add New Task" class="form-control" (focusout)="validateField('TaskName')">
+      <span *ngIf="shouldShowError('TaskName') && TaskformIn.get('TaskName').hasError('minlength')" class="text-danger">must have 3 letters at least</span>
+      <span *ngIf="shouldShowError('TaskName') && TaskformIn.get('TaskName').hasError('required')" class="text-danger">This field is Required</span>
+
+
+      <textarea rows="4" cols="50" formControlName="Description" placeholder="Add Task Description" class="form-control descTextarea" style="height: 5vw;" (blur)="validateField('TaskName')" (focusout)="validateField('TaskName')"></textarea>
+      <span *ngIf="shouldShowError('Description') && TaskformIn.get('Description').hasError('minlength')" class="text-danger">must have 5 letters at least</span>
+      <input formControlName="dueDate" [(ngModel)]="startDate" type="date" class="form-control">
+      <!-- <input hidden formControlName="id"> -->
+    </div>
+    <div class="container-btns d-flex justify-content-between mt-5 ">
+      <div class="btn btn-outline-dark w-25" (click)="onCancleNewTaskView()">Cancel</div>
+      <button class="btn btn-success w-25" (click)="addNewTaskSubmit()" [disabled]="TaskformIn.invalid">Submit</button>
+    </div>
+  </form>
+</div>
+<div class="overlay"></div>

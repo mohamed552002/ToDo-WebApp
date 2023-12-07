@@ -1,0 +1,31 @@
+<div class="containerdiv">
+  <div *ngFor="let task of tasks" class="task d-flex border-bottom justify-content-between align-items-baseline" >
+    <div class="d-flex align-items-baseline">
+      <input  [checked]="task.isCompleted" (change)="onCompletedCheck(task.id,task)"  class="me-3" type="checkbox"  >
+      <del *ngIf="taskFinished" [ngStyle]="{color:'#adb5bd'}">{{task.name}}</del>
+      <p  [ngStyle]="{ color:task.isCompleted ? '#adb5bd':'black',textDecoration:task.isCompleted ?'line-through':'none'}">{{task.name}}</p>
+    </div>
+    <div >
+    <button class="btn btn-primary my-2" (click)="onEditBtnClick()" (click)="sendTask(task)" >edit{{task.Name}}</button>
+    </div>
+  <!-- <div class="task d-flex border-bottom justify-content-between align-items-baseline" >
+    <div class="d-flex align-items-baseline">
+      <input (click)="taskFinished=!taskFinished" class="me-3" type="checkbox"  >
+      <del *ngIf="taskFinished">task 1</del>
+      <p *ngIf="!taskFinished">task 1</p>
+    </div>
+    <div >
+    <button class="btn btn-primary my-2" >edit</button>
+    </div>
+  </div> -->
+  <!-- <div class="task d-flex border-bottom justify-content-between align-items-baseline" >
+    <div class="d-flex align-items-baseline">
+      <input class="me-3" type="checkbox"  >
+      <p>task 1</p>
+    </div>
+    <div >
+    <button class="btn btn-primary my-2" (click)="onEditBtnClick()" >edit</button>
+    </div>
+  </div> -->
+</div>
+</div>
